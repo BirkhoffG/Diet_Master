@@ -2,7 +2,7 @@
 
 ## Create Users
 
-Make migration first:
+Migrate first:
 
 ```
 > python manage.py migrate
@@ -20,5 +20,31 @@ Make migration first:
 
 ```
 > python manage.py startapp [app-name]
+```
+
+
+
+## Make Migration
+
+Make migration after new models.
+
+```
+> python manage.py makemigrations
+```
+
+Then migrate:
+
+```
+> python manage.py migrate
+```
+
+
+
+## Create new Models
+
+Enable `shell`
+
+```
+> python manage.py shell
 ```
 

@@ -1,5 +1,10 @@
 # virtualenv
+env/
 venv/
+ENV/
+
+# Django stuff:
+*.log
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -7,6 +12,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# IDE related
+# Code editors
+.vscode
 .idea/
-.vscode/
+*.iws
+out/
+.idea_modules/
+
+
+# .DS_Store for OSX
+.DS_Store
