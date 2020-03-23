@@ -78,12 +78,40 @@ Remember you are in the new branch while commiting the code.
 
    > Write descriptive messages such as "Add a front page", "Fix bug in header". The more descriptive, the better the commit message's quality can be.
 
-### 4. Create a Pull Request
+### 4. Push code into the Repository
 
 1. Go to `master` branch first
 
    ```
    > git checkout master
+   ```
+
+2. Ensure the `master` branch is up-to-date
+
+   ```
+   > git pull
+   ```
+
+3. Go to `dev` again and push your code to the GitHub.
+
+   ```
+   > git checkout dev
+   > git push
+   ```
+
+   You will find message requiring to specify the exact branch like
+
+   ```
+   ^[[Afatal: The current branch hangzhi has no upstream branch.
+   To push the current branch and set the remote as upstream, use
+   
+       git push --set-upstream origin dev
+   ```
+
+   Follow the message 
+
+   ```
+   > git push --set-upstream origin dev
    ```
 
    
