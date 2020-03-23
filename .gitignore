@@ -22,3 +22,6 @@ out/
 
 # .DS_Store for OSX
 .DS_Store
+
+# ignore db.sqlite3 for now
+db.sqlite3
