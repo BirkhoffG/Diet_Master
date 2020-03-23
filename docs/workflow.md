@@ -28,7 +28,7 @@
    > git branch dev
    ```
 
-   > Naming the new branch `dev` is actually not recommended. Naming the new branch as a specific feature name (e.g. frontpage) or developer's name (e.g. birkhoff) might be a better choice.
+   > Naming the new branch `dev` is actually not recommended. Naming the new branch as a descriptive branch name such as specific feature name (e.g. frontpage) or developer's name (e.g. birkhoff) might be a better choice.
    
    Now we have two branches `git branch`
    
@@ -52,3 +52,38 @@
 
 ### 2. Edit in the new branch
 
+Edit code in the new branch. 
+
+### 3. Git Commit 
+
+Remember you are in the new branch while commiting the code.
+
+1. Add changed files by
+
+   ```
+   > git add [your-file-name]
+   ```
+
+   or add all changed files by
+
+   ```
+   > git add -A
+   ```
+
+2. Commit to the local repository
+
+   ```
+   > git commit -m "[commit message]"
+   ```
+
+   > Write descriptive messages such as "Add a front page", "Fix bug in header". The more descriptive, the better the commit message's quality can be.
+
+### 4. Create a Pull Request
+
+1. Go to `master` branch first
+
+   ```
+   > git checkout master
+   ```
+
+   
