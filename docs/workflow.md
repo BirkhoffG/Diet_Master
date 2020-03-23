@@ -12,6 +12,12 @@
 
 3. Check the `setup.md` if the developing environment has not been set up.
 
+## Ground Rules
+
+1. The `master` branch is the stable branch. DO NOT PUSH CODE DIRECTLY TO THE `master` BRANCH.  
+2. Developers should create a new branch and submit the **pull request** to merge code into `master`.
+3. Before merging any pull request, code review should be done. At least one approved review is required.
+
 ## Procedure
 
 ### 1. Create a new branch
@@ -114,9 +120,28 @@ Remember you are in the new branch while commiting the code.
    > git push --set-upstream origin dev
    ```
 
-   
-
 ### 5. Now it is time to create a pull request in GitHub
 
 1. Log in your GitHub account.
-2. Go to our `BirkhoffG/Diet_Master` repository.
+2. Go to our `BirkhoffG/Diet_Master` repository. On your committed branch, you can find the `Pull Request` button.
+
+![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\start_pull_request.png)
+
+3. After clicking the pull request, one following page will pop up. Select a reviewer to check the code and leave some comment if necessary. 
+
+   > **Important**: This workflow mandatorily requires code review before merging into the `master` branch. Selecting a reviewer can accelerate reviewing process.
+
+![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\open_pull_request.png)
+
+4. The reviewer can check the changed code by clicking "Add your review".
+
+![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\new_request.png)
+
+5. The reviewer can make comment, approve or request change.
+
+![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\review.png)
+
+6. If the code is approved, reviewer or the committer can merge pull request into the `master` branch.
+
+![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\merge.png)
+
