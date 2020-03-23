@@ -115,3 +115,8 @@ Remember you are in the new branch while commiting the code.
    ```
 
    
+
+### 5. Now it is time to create a pull request in GitHub
+
+1. Log in your GitHub account.
+2. Go to our `BirkhoffG/Diet_Master` repository.
