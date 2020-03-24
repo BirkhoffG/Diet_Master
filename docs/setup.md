@@ -1,5 +1,33 @@
 # Environment Setup Tutorial
 
+## Before this step
+
+Make sure you are have clone the project
+
+```
+> git clone https://github.com/BirkhoffG/Diet_Master.git
+```
+
+and stay in the right directory
+
+```
+> D:\CPS\Course\Capstone\Diet_Master> dir
+目录: D:\CPS\Course\Capstone\Diet_Master
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        2020/3/23     21:11                app
+d-----        2020/3/23     21:11                diet_master
+d-----        2020/3/23     21:11                docs
+d-----        2020/3/23     21:24                templates
+-a----        2020/3/23     21:19            296 .gitignore
+-a----        2020/3/23     17:07            652 manage.py
+-a----        2020/3/23     17:22            517 README.md
+```
+
+
+
 ## Install Python 3.8, Virtual Environments, Django 3+ on Windows using virtualenv, pip and Windows Powershell
 
 Detailed setup can be found in https://www.codingforentrepreneurs.com/blog/install-python-django-on-windows/.
@@ -17,7 +45,7 @@ Python 3.8.2
 Verify pip by entering:
 
 ```
-pip freeze
+> pip freeze
 ```
 
  If you see `The term 'pip' is not recognized as the name...` then you do the installation correctly. Otherwise, you're good. 
@@ -29,7 +57,7 @@ pip freeze
 1.  To install a `Pipenv` as our virtual environment manager: 
 
 ```
-pip install virtualenv
+> pip install virtualenv
 ```
 
 > Tips: 国内开发者建议换 pip镜像源。使用以下命令行：
@@ -69,7 +97,7 @@ virtualenv==16.7.9
    Verify by
 
    ```
-   Set-ExecutionPolicy Unrestricted
+   > Set-ExecutionPolicy Unrestricted
    ```
 
 4. Activate your environment:
