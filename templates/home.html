@@ -2,9 +2,29 @@
 
 {% block content %}
 
-    <h1>Hello World</h1>
-    <p>I am {{ request.user }}</p>
+<module-one>
+    <center>
+    <div>
+        <h3 style="text-align:center;color:#f10180">用户注册</h3>
+      <hr>
+    </div>
+    <div style="margin:100px">
+          <form>
+              <p>
+                  <input type="text" placeholder="用户名">
+              </p>
+              <p>
+                  <input type="password" placeholder="密码">
+              </p>
+              <p>
+                  <input type="checkbox" required="required">我已阅读注册手册
+              </p>
+              <input type="button" value="注册">
+            </form>
+    </div>
+</center>
 
+</module-one>
 
 
 {% endblock content %}
