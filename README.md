@@ -1,6 +1,6 @@
 # Diet Master
 
-## `git pull` Before Starting and Committing
+## `git pull` Before Starting and Committing!!!
 
 Don't forget to execute `git pull` before starting coding and committing to the github.  
 
