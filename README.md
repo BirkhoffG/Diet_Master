@@ -1,5 +1,9 @@
 # Diet Master
 
+## `git pull` Before Starting and Committing
+
+Don't forget to execute `git pull` before starting coding and committing to the github.  
+
 ## How to install?
 
 1. Make sure [git](https://git-scm.com/downloads) is installed in your computer.
