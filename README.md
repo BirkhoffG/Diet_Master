@@ -2,7 +2,14 @@
 
 ## `git pull` Before Starting and Committing!!!
 
-Don't forget to execute `git pull` before starting coding and committing to the github.  
+Don't forget to execute `git pull` in the `master` branch before starting coding and committing to the github.  
+
+```
+# go to the master branch
+git checkout master
+# sync remote repository
+git pull
+```
 
 ## How to install?
 
