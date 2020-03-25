@@ -125,23 +125,23 @@ Remember you are in the new branch while commiting the code.
 1. Log in your GitHub account.
 2. Go to our `BirkhoffG/Diet_Master` repository. On your committed branch, you can find the `Pull Request` button.
 
-![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\start_pull_request.png)
+![](./imgs/start_pull_request.png)
 
 3. After clicking the pull request, one following page will pop up. Select a reviewer to check the code and leave some comment if necessary. 
 
    > **Important**: This workflow mandatorily requires code review before merging into the `master` branch. Selecting a reviewer can accelerate reviewing process.
 
-![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\open_pull_request.png)
+![](./imgs/open_pull_request.png)
 
 4. The reviewer can check the changed code by clicking "Add your review".
 
-![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\new_request.png)
+![](./imgs/new_request.png)
 
 5. The reviewer can make comment, approve or request change.
 
-![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\review.png)
+![](./imgs/review.png)
 
 6. If the code is approved, reviewer or the committer can merge pull request into the `master` branch.
 
-![](D:\CPS\Course\Capstone\Diet_Master\docs\imgs\merge.png)
+![](./imgs/merge.png)
 
