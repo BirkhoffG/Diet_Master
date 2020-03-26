@@ -1,11 +1,40 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
-    Diet Master
+    Home
 {% endblock %}
-
 {% block content %}
-    {# TODO: create a cover page #}
-    {# TODO: https://getbootstrap.com/docs/4.4/examples/cover/ #}
-    {# Assignee: Wang Haohui #}
-{% endblock content %}
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/home.css">
+    
+        <title>
+        Home
+    </title>
+      </head>
+
+    <body class="home_component">
+
+        <div class="background_div">
+        <div class="content" >
+             <center>
+                <img src="{% static '/img/WKU.png' %}" width= "80" height="80">
+                <div style="height:20px;"></div>
+                <h3 class="home_subtitle">Diet Master</h3>
+                <div style="height:20px;"></div>
+                <button class="submit_button" type="submit">Start</button>
+            </center>
+        </div>
+
+        </div>
+
+    </body>
+
+</html>
+{% endblock %}
