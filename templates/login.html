@@ -1,34 +1,42 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
     Login
 {% endblock %}
-
 {% block content %}
-    {# TODO: create a boostrap style login page. Please check the template in #}
-    {# TODO: https://getbootstrap.com/docs/4.4/examples/sign-in/ #}
-    {# Assignee: Andy #}
-    <module-one>
-        <center>
-            <div>
-                <h3 style="text-align:center;color:#f10180">用户注册</h3>
-                <hr>
-            </div>
-            <div style="margin:100px">
-                <form>
-                    <p>
-                        <input type="text" placeholder="用户名">
-                    </p>
-                    <p>
-                        <input type="password" placeholder="密码">
-                    </p>
-                    <p>
-                        <input type="checkbox" required="required">我已阅读注册手册
-                    </p>
-                    <input type="button" value="注册">
-                </form>
-            </div>
-        </center>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/sign_in.css' %}" >
+    </head>
 
-    </module-one>
+    <body class="sign_in_component">
+
+        <div class="background_div">
+        <div class="content" >
+             <center>
+                <img src="{% static '/img/WKU.png' %}" width= "80" height="80">
+                <h3 class="sign_in_subtitle">Please Sign in </h3>
+                <!--用户名密码-->
+                <div class="account_format">
+                    <input type="email" id="inputEmail" class="account_control" placeholder="Email Address" required autofocus>
+                    <br/>
+                    <input type="password" id="inputPassword" class="account_control" placeholder="Password" required>
+                </div>
+                <!--这里可以选保持账户信息状态-->
+                <div class="checkbox">
+                    <label >
+                        <input type = "checkbox" value = "remember_me"> Remember Me
+                    </label>
+                </div>
+                <button class="submit_button" type="submit">Sign in</button>
+                <p class="version_no">© 2020</p>
+            </center>
+        </div>
+
+        </div>
+
+    </body>
+
+</html>
 {% endblock %}
