@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
     Diet Master
 {% endblock %}
-
 {% block content %}
-    {# TODO: create a cover page #}
-    {# TODO: https://getbootstrap.com/docs/4.4/examples/cover/ #}
-    {# Assignee: Wang Haohui #}
+
+    <div class="text-center">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <main class="inner cover">
+                <img src="{% static '/img/WKU.png' %}" width="80" height="80">
+                <h1 class="home_subtitle">Diet Master</h1>
+                <div style="height:20px;"></div>
+                <p class="lead">Recommend the best food while keep you fitted</p>
+                <button class="btn btn-primary btn-lg" type="submit">Get Started</button>
+            </main>
+        </div>
+
+
+    </div>
+
 {% endblock content %}
