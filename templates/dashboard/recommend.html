@@ -1,4 +1,105 @@
 {% extends './base.html' %}
 
-{# TODO: Create a recommendation page #}
-{# Assignee: Birkhoff #}
+
+{% block content %}
+
+  <section class="container pt-3">
+
+    <div class="row">
+      <h1 class="mb-3 col-lg-12" style="color: darkblue">Guess you like</h1>
+    </div>
+
+    <div id="carouselFoods" class="carousel slide" data-ride="carousel">
+
+      <! –– start carousel-inner ––>
+      <div class="container pt-0 mt-0 carousel-inner">
+        {% for card_sub_list in card_list %}
+
+          <! –– start carousel-item ––>
+          {% if forloop.first %}
+            <div class="row row-equal carousel-item active mt-0">
+          {% else %}
+            <div class="carousel-item">
+          {% endif %}
+        <div class="card-deck">
+
+          <! –– start card ––>
+          {% for card in card_sub_list %}
+            <div class="col-md-4">
+              <div class="card shadow">
+                <img class="card-img-top" src="{{ card.img_url }}"
+                     alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    {{ card.title }}
+                    <span class="pull-right">
+                        <button class="very-like"><i class="fa fa-star-o" onclick="switchVeryLike(this)"></i> </button>
+                        <button class="dislike"><i class="fa fa-thumbs-o-down"
+                                                   onclick="switchDislike(this)"></i></button>
+                        <button class="like"><i class="fa fa-thumbs-o-up" onclick="switchLike(this)"></i></button>
+                    </span>
+                  </h5>
+                  <p class="card-text">{{ card.summary }}</p>
+                </div>
+                <div class="card-footer">
+                  <a href="{{ card.detail_url }}">Learn more...</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          <! –– end card ––>
+        </div>
+        </div>
+          <! –– end carousel-item ––>
+
+        {% endfor %}
+        </div>
+        <! –– end carousel-inner ––>
+
+        <! –– carousel control ––>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-right mb-4">
+              <a class="btn btn-outline-secondary prev" href="#carouselFoods" title="go back"><i
+                class="fa fa-lg fa-chevron-left"></i></a>
+              <a class="btn btn-outline-secondary next" href="#carouselFoods" title="more"><i
+                class="fa fa-lg fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <! –– end carousel control ––>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+      // 需要优化
+      function switchVeryLike(elem) {
+          const elementClassName = elem.className;
+          if (elementClassName === "fa fa-star")
+              elem.className = "fa fa-star-o";
+          else
+              elem.className = "fa fa-star";
+      }
+
+      function switchLike(elem) {
+          const elementClassName = elem.className;
+          if (elementClassName === "fa fa-thumbs-o-up")
+              elem.className = "fa fa-thumbs-up";
+          else
+              elem.className = "fa fa-thumbs-o-up";
+      }
+
+      function switchDislike(elem) {
+          const elementClassName = elem.className;
+          if (elementClassName === "fa fa-thumbs-o-down")
+              elem.className = "fa fa-thumbs-down";
+          else
+              elem.className = "fa fa-thumbs-o-down";
+      }
+
+  </script>
+
+{% endblock %}

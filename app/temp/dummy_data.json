@@ -1,0 +1,67 @@
+{
+  "card_list": [
+    [
+      {
+        "title": "Food title",
+        "summary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg",
+        "detail_url": "#",
+        "like": false,
+        "dislike": false,
+        "very-like": false
+      },
+      {
+        "title": "Food title",
+        "summary": "This card has supporting text below as a natural lead-in to additional content.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(52).jpg",
+        "detail_url": "#"
+      },
+      {
+        "title": "Food title",
+        "summary": "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg",
+        "detail_url": "#"
+      }
+    ],
+    [
+      {
+        "title": "Food title",
+        "summary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg",
+        "detail_url": "#"
+      },
+      {
+        "title": "Food title",
+        "summary": "This card has supporting text below as a natural lead-in to additional content.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(52).jpg",
+        "detail_url": "#"
+      },
+      {
+        "title": "Food title",
+        "summary": "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg",
+        "detail_url": "#"
+      }
+    ],
+    [
+      {
+        "title": "Food title",
+        "summary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg",
+        "detail_url": "#"
+      },
+      {
+        "title": "Food title",
+        "summary": "This card has supporting text below as a natural lead-in to additional content.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(52).jpg",
+        "detail_url": "#"
+      },
+      {
+        "title": "Food title",
+        "summary": "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.",
+        "img_url": "https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg",
+        "detail_url": "#"
+      }
+    ]
+  ]
+}
