@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import json, os
 
 
 # Create your views here.
@@ -17,7 +18,11 @@ def survey_view(request):
 
 
 def recommendation_view(request):
-    return render(request, "./dashboard/recommend.html")
+
+    card_list = {}
+    with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "app/temp/dummy_data.json"), 'r') as f:
+        card_list = json.load(f)
+    return render(request, "./dashboard/recommend.html", card_list)
 
 
 def profile_view(request):

@@ -9,7 +9,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/recommend.style.css' %}" >
 
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -21,7 +23,7 @@
 
     <!-- page content -->
     <div id="page-content-wrapper">
-        <div class="container-fluid">
+        <div class="container">
             {% block content %}
                 <h1 class="mt-4">Title </h1>
                 replace here
@@ -43,6 +45,19 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
+
+
+    (($) => {
+        "use strict";
+        // manual carousel controls
+        $('.next').click(() => { $('.carousel').carousel('next'); return false; });
+        $('.prev').click(() => { $('.carousel').carousel('prev'); return false; });
+
+        // longer delay peroid
+        $('.carousel').carousel({interval: 20000});
+
+    })(jQuery);
 </script>
 
 </body>
