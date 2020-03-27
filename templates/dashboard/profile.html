@@ -2,9 +2,88 @@
 
 
 {% block content%}
-    {# TODO: create a profile page #}
-    {# Assignee: Zhang Hao #}
-    {# Assignee: Birkhoff #}
+{# TODO: create a profile page #}
+{# Template: https://getbootstrap.com/docs/4.4/examples/blog/ #}
+{# Assignee: Zhang Hao #}
+{# Assignee: Birkhoff #}
+
+<div class="container">
+    <div class="row jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-4 px-0">
+            <img class="user_image" src="/static/img/user1.jpg"/>
+        </div>
+        <div class="offset-md-2 col-md-6 px-0">
+            <div class="row">
+                <h1 class="display-4 font-italic">Hello, Username</h1>
+                <div class="col-md-6 px-0">
+                    <p class="lead my-3 font-weight-bold">Your Current Weight: </p>
+                    <p class="lead my-3">75 kg</p>
+                </div>
+                <div class="col-md-6 px-0">
+                    <p class="lead my-3 font-weight-bold">Your Goal Weight: </p>
+                    <p class="lead my-3">70 kg</p>
+                </div>
+                <div class="col-md-6 px-0">
+                    <p class="lead my-3 font-weight-bold">Expected Duration: </p>
+                    <p class="lead my-3">7 weeks</p>
+                </div>
+                <div class="col-md-6 px-0">
+                    <p class="lead my-3 font-weight-bold">Calories Per Day: </p>
+                    <p class="lead my-3">1600 kcal</p>
+                </div>
+                <div class="col-md-6 my-3 px-0">
+                    <p class="lead mb-0">
+                        <a href="#" class="text-muted font-weight-bold">Edit Profile</a>
+                    </p>
+                </div>
+                <div class="col-md-6 my-3 px-0">
+                    <p class="lead mb-0">
+                    <a href="#" class="text-muted font-weight-bold">View Micronutrients</a>
+                </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 bg-white">
+
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h3 class="mb-0">Survey</h3>
+                    <div class="mb-1 text-muted">Last Updating: 2020/3/27</div>
+                    <p class="card-text mb-auto">You can do your survey again to update your states.</p>
+                    <a href="#" class="stretched-link">Do Survey Again</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h3 class="mb-0">Like Food List</h3>
+                    <div class="mb-1 text-muted">Last Updating: 2020/3/27</div>
+                    <p class="card-text mb-auto">This is a list which contains all kind of food you like.</p>
+                    <a href="#" class="stretched-link">View List</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h3 class="mb-0">Dislike Food List</h3>
+                    <div class="mb-1 text-muted">Last Updating: 2020/3/27</div>
+                    <p class="card-text mb-auto">This is a list which contains all kind of food you dislike.</p>
+                    <a href="#" class="stretched-link">View List</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
