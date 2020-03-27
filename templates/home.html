@@ -4,34 +4,19 @@
     Diet Master
 {% endblock %}
 {% block content %}
-<html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
 
-        <!-- Bootstrap CSS -->
-
-        <link rel="stylesheet" href="/static/css/home.css">
-        
-        <title>
-        Diet Master
-    </title>
-      </head>
-
-    <body class="home_component">
-        <div class="background_div">
-        <div class="content" >
-             <center>
-                <img src="{% static '/img/WKU.png' %}" width= "80" height="80">
-                <h3 class="home_subtitle">Diet Master</h3>
+    <div class="text-center">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <main class="inner cover">
+                <img src="{% static '/img/WKU.png' %}" width="80" height="80">
+                <h1 class="home_subtitle">Diet Master</h1>
                 <div style="height:20px;"></div>
-                <button class="start_button" type="start">Start</button>
-            </center>
+                <p class="lead">Recommend the best food while keep you fitted</p>
+                <button class="btn btn-primary btn-lg" type="submit">Get Started</button>
+            </main>
         </div>
 
-        </div>
 
-    </body>
+    </div>
 
-</html>
-{% endblock content%}
+{% endblock content %}
