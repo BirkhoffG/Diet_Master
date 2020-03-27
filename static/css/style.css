@@ -48,3 +48,8 @@ body {
 }
 
 .lh-condensed { line-height: 1.25; }
+
+.user_image{
+height:100%;
+width:100%;
+}
