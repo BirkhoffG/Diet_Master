@@ -29,7 +29,7 @@ Migrate first:
 Make migration after new models.
 
 ```
-> python manage.py makemigrations
+> python manage.py makemigrations [app-name]
 ```
 
 Then migrate:

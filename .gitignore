@@ -25,3 +25,6 @@ out/
 
 # ignore db.sqlite3 for now
 db.sqlite3
+
+# ignore migrations file
+migrations/
