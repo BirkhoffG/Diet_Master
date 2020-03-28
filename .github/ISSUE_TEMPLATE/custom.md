@@ -9,7 +9,7 @@ assignees: ''
 
 **Description**:
 
-Create a 404 page.
+Describe the issue...
 
 **Deliverables**:
 
