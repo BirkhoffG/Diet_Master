@@ -126,8 +126,10 @@ virtualenv==16.7.9
 
 ### 7. Install Django Package
 
+Install django `pip install`
+
 ```
-(venv) > pip install django==3.0.2
+(venv) > pip install -r requirements.txt
 ```
 
 Verify by `pip freeze`
