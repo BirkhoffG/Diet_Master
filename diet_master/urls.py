@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 # from app.views import home_view, login_view, profile_view, recommendation_view, survey_view
-from apps.accounts.views import login_view, register_view
+from apps.accounts.views import login_view, register_view, survey_view, profile_view
 from apps.recommender.views import recommendation_view
-from apps.web.views import home_view, survey_view, profile_view
+from apps.web.views import home_view
 
 urlpatterns = [
     path('', home_view, name='home'),

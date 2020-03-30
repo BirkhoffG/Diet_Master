@@ -7,9 +7,3 @@ def home_view(request, *args, **kwargs):
     return render(request, "home.html", {})
 
 
-def survey_view(request):
-    return render(request, "./dashboard/survey.html")
-
-
-def profile_view(request):
-    return render(request, "./dashboard/profile.html")
