@@ -10,9 +10,9 @@ def register_view(request):
     return render(request, "register.html")
 
 
-def survey_view(request):
+def survey_view(request, user_id):
     return render(request, "./dashboard/survey.html")
 
 
-def profile_view(request):
+def profile_view(request, user_id):
     return render(request, "./dashboard/profile.html")
