@@ -23,7 +23,12 @@ git pull
 
 3. Set up the `Django` environment following [setup.md](docs/setup.md)
 
-4. The website should work properly at [http://127.0.0.1:8000](http://127.0.0.1:8000).
+4. After the Python environment is activated, you can run the server.
+   ```
+   (venv) > python manage.py runserver
+   ```
+
+5. The website should work properly at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ## How to commit code?
 
