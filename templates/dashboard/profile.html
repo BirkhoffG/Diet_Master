@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row jumbotron p-4 p-md-5 text-white rounded bg-dark">
         <div class="col-md-4 px-0">
-            <img class="user_image" src="{% static '/img/user1.jpg' %}"/>
+            <img class="user_image" src="{% static '/img/user1.jpg' %}" alt="Card image cap"/>
         </div>
         <div class="offset-md-2 col-md-6 px-0">
             <div class="row">
@@ -51,7 +51,7 @@
                     <h3 class="mb-0">Survey</h3>
                     <div class="mb-1 text-muted">Last Updating: 2020/3/27</div>
                     <p class="card-text mb-auto">You can do your survey again to update your states.</p>
-                    <a href="#" class="stretched-link">Do Survey Again</a>
+                    <a href="{% url 'survey' %}" class="stretched-link">Do Survey Again</a>
                 </div>
 
             </div>
