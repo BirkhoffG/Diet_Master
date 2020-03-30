@@ -1,16 +1,12 @@
 {% extends './base.html' %}
-
+{% load static %}
 
 {% block content%}
-{# TODO: create a profile page #}
-{# Template: https://getbootstrap.com/docs/4.4/examples/blog/ #}
-{# Assignee: Zhang Hao #}
-{# Assignee: Birkhoff #}
 
 <div class="container">
     <div class="row jumbotron p-4 p-md-5 text-white rounded bg-dark">
         <div class="col-md-4 px-0">
-            <img class="user_image" src="/static/img/user1.jpg"/>
+            <img class="user_image" src="{% static '/img/user1.jpg' %}"/>
         </div>
         <div class="offset-md-2 col-md-6 px-0">
             <div class="row">
