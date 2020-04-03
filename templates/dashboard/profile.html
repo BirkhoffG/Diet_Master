@@ -10,7 +10,7 @@
         </div>
         <div class="offset-md-2 col-md-6 px-0">
             <div class="row">
-                <h1 class="display-4 font-italic">Hello, Username</h1>
+                <h1 class="display-4 font-italic">Hello, {{ request.user | capfirst }}</h1>
                 <div class="col-md-6 px-0">
                     <p class="lead my-3 font-weight-bold">Your Current Weight: </p>
                     <p class="lead my-3">75 kg</p>
