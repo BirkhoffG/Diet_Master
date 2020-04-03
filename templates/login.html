@@ -13,7 +13,7 @@
   <body class="sign_in_component">
 
   <div class="background_div ">
-    <div>
+    <div class="content">
       <center>
         <form method="post" action="{% url 'login' %}">
           {% csrf_token %}
@@ -36,7 +36,7 @@
           <input class="submit_button" type="submit" value="Sign in">
 
           <input type="hidden" name="next" class="text-red" value="{{ request.GET.next }}">
-          <p class="text-red">{{ error_msg }}</p>
+          <p class="text-red" style="font-weight: bold;">{{ error_msg }}</p>
           <p class="version_no">© 2020</p>
         </form>
       </center>
