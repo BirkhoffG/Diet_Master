@@ -1,12 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import User
 import uuid
 
 
 # Create your models here.
-class User(models.Model):
-    user_name = models.CharField(max_length=30)
-    user_password = models.CharField(max_length=30)
-    user_email = models.EmailField(max_length=45, null=True, blank=True)
+# class User(models.Model):
+#     user_name = models.CharField(max_length=30)
+#     user_password = models.CharField(max_length=30)
+#     user_email = models.EmailField(max_length=45, null=True, blank=True)
 
 
 class WellBeing(models.Model):
