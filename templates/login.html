@@ -1,42 +1,50 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-Login
+  Login
 {% endblock %}
 {% block content %}
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="{% static 'css/sign_in.css' %}">
-</head>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/sign_in.css' %}">
+  </head>
 
-<body class="sign_in_component">
+  <body class="sign_in_component">
 
-<div class="background_div ">
-  <div >
-    <center>
-      <img src="{% static '/img/WKU.png' %}" width="80" height="80">
-      <h3 class="sign_in_subtitle">Please Login </h3>
-      <!--用户名密码-->
-      <div class="account_format">
-        <input type="email" id="inputEmail" class="account_control" placeholder="Email Address" required autofocus>
-        <br/>
-        <input type="password" id="inputPassword" class="account_control" placeholder="Password" required>
-      </div>
-      <!--这里可以选保持账户信息状态-->
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value="remember_me"> Remember Me
-        </label>
-      </div>
-      <button class="submit_button" type="submit">Sign in</button>
-      <p class="version_no">© 2020</p>
-    </center>
+  <div class="background_div ">
+    <div>
+      <center>
+        <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+          <img src="{% static '/img/WKU.png' %}" width="80" height="80">
+          <h3 class="sign_in_subtitle">Please Login </h3>
+          <!--用户名密码-->
+          <div class="account_format">
+            <input type="text" name="email" id="inputEmail" class="account_control" placeholder="User Name" required
+                   autofocus>
+            <br/>
+            <input type="password" name="pwd" id="inputPassword" class="account_control" placeholder="Password"
+                   required>
+          </div>
+          <!--这里可以选保持账户信息状态-->
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="remember_me"> Remember Me
+            </label>
+          </div>
+          <input class="submit_button" type="submit" value="Sign in">
+
+          <input type="hidden" name="next" class="text-red" value="{{ request.GET.next }}">
+          <p class="text-red">{{ error_msg }}</p>
+          <p class="version_no">© 2020</p>
+        </form>
+      </center>
+    </div>
+
   </div>
 
-</div>
+  </body>
 
-</body>
-
-</html>
+  </html>
 {% endblock %}
