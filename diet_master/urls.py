@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from apps.accounts.views import login_view, register_view, survey_view, profile_view
+from apps.accounts.views import login_view, logout_view, register_view, survey_view, profile_view
 from apps.recommender.views import recommendation_view
 from apps.web.views import home_view
 
 urlpatterns = [
     path('', home_view, name='home'),
     path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
     path('register/', register_view, name='register'),
     path('user/', recommendation_view, name='recommendation'),
     path('user/survey', survey_view, name='survey'),
