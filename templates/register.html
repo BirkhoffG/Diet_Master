@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+Register
+{% endblock %}
 {% block content %}
 <html>
 <head>
@@ -8,10 +11,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="robots" content="all,follow">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="{% static 'css/sign_in.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style.default.css' %}">
-  <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+  <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
+  <!--  <link rel="stylesheet" href="{% static 'css/sign_in.css' %}">-->
+<!--  <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css">-->
+<!--  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">-->
 </head>
 <body>
 <div class="page login-page">
@@ -22,7 +25,8 @@
         <div class="col-lg-6">
           <div class="info d-flex align-items-ceenter">
             <div class="content">
-              <div class="logo" style="margin:auto; position:absolute;left:50%;top:50%;margin-left: -150px;margin-top:-100px;">
+              <div class="logo"
+                   style="margin:auto; position:absolute;left:50%;top:50%;margin-left: -150px;margin-top:-100px;">
                 <center>
                   <h1>Welcome</h1>
                   <h1>To</h1>
@@ -185,9 +189,6 @@
     }
   })
  //})这里有问题
-
-
-
 
 
 </script>
