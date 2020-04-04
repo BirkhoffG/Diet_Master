@@ -11,7 +11,7 @@ Login
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="robots" content="all,follow">
-<!--  <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css">-->
+  <!--  <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css">-->
   <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
   <!--<link rel="stylesheet" href="{% static 'css/sign_in.css' %}">-->
 </head>
@@ -45,27 +45,29 @@ Login
                   <input id="login-username" type="text" name="userName" required data-msg="Please enter username"
                          placeholder="Username" class="input-material">
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-bottom:55px">
                   <input type="password" id="login-password" name="passWord" required data-msg="Please enter password"
                          placeholder="Password" class="input-material">
                 </div>
                 <button id="login" type="submit" class="btn btn-primary">Login</button>
-                <div style="margin-top:-40px;">
+                <div style="margin-top:-95px;">
+                  <!--记住密码-->
+                  <div class="custom-control custom-checkbox" style="float:left;">
+                    <input type="checkbox" class="custom-control-input" id="check1">
+                    <label class="custom-control-label" for="check1">Remember&nbsp&nbsp</label>
+                  </div>
                   <!--自动登录-->
-                  <div class="custom-control custom-checkbox" style="float:right">
+                  <div class="custom-control custom-checkbox" style="float:left">
                     <input type="checkbox" class="custom-control-input" id="check2">
                     <label class="custom-control-label" for="check2">Login Automatically</label>
-                  </div>
-                  <!--记住密码-->
-                  <div class="custom-control custom-checkbox" style="float:right;">
-                    <input type="checkbox" class="custom-control-input" id="check1">
-                    <label class="custom-control-label" for="check1">Remember&nbsp;&nbsp;&nbsp;</label>
                   </div>
                 </div>
               </form>
               <br/>
-              <small>No account?</small>
-              <a href="{% url 'register' %}" class="signup">&nbsp;Register</a>
+              <div style="padding-top:65px;">
+                <small>No account?</small>
+                <a href="{% url 'register' %}" class="signup">&nbsp;Register</a>
+              </div>
             </div>
           </div>
         </div>
@@ -143,6 +145,8 @@ Login
         }
       })*/
   })
+
+
 
 </script>
 </body>
