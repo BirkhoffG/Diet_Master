@@ -41,14 +41,17 @@
         <div class="col-lg-6 bg-white">
           <div class="form d-flex align-items-center">
             <div class="content">
-              <form method="post" action="https://www.baidu.com" class="form-validate" id="loginFrom">
+              <form method="post" action="{% url 'login' %}" class="form-validate" id="loginFrom">
+                {% csrf_token %}
                 <div class="form-group">
-                  <input id="login-username" type="text" name="userName" required data-msg="Please enter username"
-                         placeholder="Username" class="input-material">
+                  <label for="login-username">User name</label>
+                  <input id="login-username" type="email" name="email" required data-msg="Please enter username"
+                                                             placeholder="" class="input-material">
                 </div>
                 <div class="form-group" style="margin-bottom:55px">
-                  <input type="password" id="login-password" name="passWord" required data-msg="Please enter password"
-                         placeholder="Password" class="input-material">
+                  <label for="login-password">Password</label>
+                  <input type="password" id="login-password" name="pwd" required data-msg="Please enter password"
+                         placeholder="" class="input-material">
                 </div>
                 <button id="login" type="submit" class="btn btn-primary">Login</button>
                 <div style="margin-top:-95px;">

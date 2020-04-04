@@ -8,7 +8,7 @@ def login_view(request):
     error_message = ""
 
     # TODO: login first message
-    print(request.POST.get('next'))
+    # print(request.POST.get('next'))
     if request.POST.get('next'):
         error_message = "Please login first."
 
@@ -16,12 +16,14 @@ def login_view(request):
         user_email = request.POST.get('email')
         user_pwd = request.POST.get('pwd')
         user_authenticate = authenticate(username=user_email, password=user_pwd)
+        print(f"user_email: {user_email}, user_pwd: {user_pwd}")
 
         if user_authenticate is not None:
             login(request, user_authenticate)
             return redirect("/user")
         else:
             error_message = "The user name or password is not correct."
+    print(error_message)
 
     return render(request, "login.html", {'error_msg': error_message})
 
