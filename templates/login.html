@@ -91,8 +91,8 @@
   /*判断上次是否勾选记住密码和自动登录*/
   var check1s = localStorage.getItem("check1");
   var check2s = localStorage.getItem("check2");
-  var oldName = localStorage.getItem("userName");
-  var oldPass = localStorage.getItem("passWord");
+  var oldName = localStorage.getItem("email");
+  var oldPass = localStorage.getItem("pwd");
      if(check1s=="true")
     {
       $("#login-username").val(oldName);
