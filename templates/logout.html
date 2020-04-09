@@ -1,6 +1,42 @@
 {% extends 'base.html' %}
-
-{% block content %}
-
-    log out
+{% load static %}
+{% block title %}
+Logout
 {% endblock %}
+{% block content %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="all,follow">
+  <!--  <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
+  <!--<link rel="stylesheet" href="{% static 'css/sign_in.css' %}">-->
+</head>
+<body>
+<div class="login-page">
+  <div class="container d-flex align-items-center">
+      <center>
+        <div class="row">
+          <!-- Logo & Information Panel-->
+            <div class="info d-flex align-items-center " >
+              <div class="content">
+                <div class="logo"
+                     style="margin:auto; position:absolute;left:50%;top:50%;margin-left: -100px;">
+                  <center>
+                    <h1 style="font-size:50px;color:#001f3f">See You ~</h1>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+      </center>
+    </div>
+</div>
+</body>
+</html>
+
+{% endblock %}
+
