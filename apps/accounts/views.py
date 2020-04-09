@@ -13,8 +13,6 @@ def is_email(email: str):
 def login_view(request):
     error_message, warning_message = None, None
 
-    # TODO: login first message
-    # print(request.POST.get('next'))
     if request.GET.get('next'):
         warning_message = "Please login first."
 
@@ -29,7 +27,7 @@ def login_view(request):
 
         if user_authenticate is not None:
             login(request, user_authenticate)
-            return redirect("/user")
+            return redirect("/user/survey")
         else:
             error_message = "The user name or password is not correct."
     print(f"error_msg: {error_message}")
