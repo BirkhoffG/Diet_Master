@@ -1,17 +1,17 @@
 <!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand mb-0 h1" style="color:#000000;">Diet Master</a>
+<nav class="navbar navbar-light bg-dark ">
+  <a class="navbar-brand mb-0 h1" style="color:#FFFFFF; padding-left:10px;">Diet Master</a>
 
   <nav class="nav nav-masthead justify-content-center">
-    <a class="nav-link active" href="{% url 'home' %}" style="color:#000000;">Home</a>
+    <a class="nav-link active" href="{% url 'home' %}" style="color:#FFFFFF">Home</a>
     {% if request.user.is_authenticated %}
-      <a class="nav-link" href="{% url 'logout' %}" style="color:#000000;">Logout</a>
+      <a class="nav-link" href="{% url 'logout' %}" style="color:#FFFFFF;">Logout</a>
       <a class="nav-link avatar avatar-32 rounded-circle bg-secondary img-fluid" href="{% url 'recommendation' %}">B</a>
     {% else %}
-      <a class="nav-link btn" href="{% url 'login' %}" style="color:#000000;">Login</a>
-      <a class="nav-link btn bg-primary " href="{% url 'register' %}" style="color:#fff;">Register</a>
+      <a class="nav-link btn" href="{% url 'login' %}" style="color:#FFFFFF;">Login</a>
+      <a class="nav-link btn bg-primary " href="{% url 'register' %}" style="color:#fff;margin-right:8px;">Register</a>
     {% endif %}
-{#    <a class="nav-link" href="" style="color:#000000;">Logout</a>#}
+{#    <a class="nav-link" href="" style="color:#FFFFFF;">Logout</a>#}
 {#    <a class="nav-link avatar avatar-32 rounded-circle bg-secondary img-fluid" href="{% url 'recommendation' %}">B</a>#}
   </nav>
 </nav>

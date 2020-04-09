@@ -1,8 +1,9 @@
 {% load static %}
-
-<!doctype html>
+{%include '../navbar.html' %}
+<!--<!doctype html>-->
 <html lang="en">
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,17 +13,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" >
     <link rel="stylesheet" href="{% static 'css/recommend.style.css' %}" >
-
+    <link rel="stylesheet" href="{% static 'css/style.default.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
+<!---这里是profile出来间隔的代码-->
 <div class="d-flex" id="wrapper">
+
     <!-- Sidebar -->
     {% include './sidebar.html' %}
 
     <!-- page content -->
-    <div id="page-content-wrapper">
+    <div id="page-content-wrapper" style="margin-top:15px;">
         <div class="container">
             {% block content %}
                 <h1 class="mt-4">Title </h1>
@@ -45,8 +48,6 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-
-
 
     (($) => {
         "use strict";
