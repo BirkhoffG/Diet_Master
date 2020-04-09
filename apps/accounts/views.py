@@ -80,3 +80,9 @@ def survey_view(request):
 @login_required(login_url="/login/")
 def profile_view(request):
     return render(request, "./dashboard/profile.html")
+
+
+@login_required(login_url="/login/")
+def edit_profile_view(request):
+    email_list = [{'mail': 'guoha@kean.edu', 'verified': True}, {'mail': 'guoha@kean.edu', 'verified': False}]
+    return render(request, "./dashboard/edit_profile.html", {"email_list": email_list})
