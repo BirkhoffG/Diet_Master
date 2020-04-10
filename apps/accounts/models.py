@@ -8,6 +8,9 @@ import uuid
 #     user_name = models.CharField(max_length=30)
 #     user_password = models.CharField(max_length=30)
 #     user_email = models.EmailField(max_length=45, null=True, blank=True)
+class AccountAvatar(models.Model):
+    user_id = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar_url = models.CharField(max_length=128)
 
 
 class WellBeing(models.Model):

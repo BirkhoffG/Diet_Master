@@ -1,0 +1,45 @@
+<div class="mt-2 col-lg-12">
+  <h2>Emails</h2>
+  <hr>
+  {#          email lists#}
+  {% for email in email_list %}
+    <div class="card">
+      <div class="card-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
+              <p class="font-weight-bold">{{ email.mail }}</p>
+            </div>
+            <div class="col-6">
+              <p class="text-right"><i class="fa fa-trash" style="color: #cb2431"></i></p>
+            </div>
+          </div>
+          <ul>
+            {% if email.verified %}
+              <li>Verified {#<span class="fa fa-info-circle"></span>#}</li>
+              <li>Used for recovering account</li>
+              <li>Receives notifications</li>
+            {% else %}
+              <li><span class="text-bold" style="color: #b08800">Unverified</span></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  <div class="mt-2 row">
+    <div class="col-md-8">
+      <form method="post" action="{% url 'edit_profile' %}">
+        <h5 class="my-3">Add email address</h5>
+        <div class="form-group input-group">
+          <input id="add-email" type="email" class="form-control" placeholder="Email address"
+                 aria-label="Add email address" aria-describedby="button-addon4">
+          <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-secondary" type="submit">Add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

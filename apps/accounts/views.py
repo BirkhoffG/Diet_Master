@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.models import User
 import re
+
+from .forms import ChangePasswordForm
 
 
 def is_email(email: str):
@@ -84,5 +86,45 @@ def profile_view(request):
 
 @login_required(login_url="/login/")
 def edit_profile_view(request):
+    error_msg, success_msg = None, None
     email_list = [{'mail': 'guoha@kean.edu', 'verified': True}, {'mail': 'guoha@kean.edu', 'verified': False}]
-    return render(request, "./dashboard/edit_profile.html", {"email_list": email_list})
+    # change_password_form = None
+    if request.method == "POST":
+        if "password" in request.POST:
+            change_password_form = ChangePasswordForm(request.user, request.POST, prefix="password")
+            if change_password_form.is_valid():
+                change_password_form.save()
+                update_session_auth_hash(request, change_password_form.user)
+            else:
+                error_msg = change_password_form.error_messages
+            # for msg in change_password_form.error_messages:
+            #     error_msg += change_password_form.error_messages[msg]
+    else:
+        change_password_form = ChangePasswordForm(request.user, prefix="password")
+
+    return render(request,
+                  "./dashboard/edit_profile.html",
+                  {
+                      "email_list": email_list,
+                      "change_password_form": change_password_form,
+                      "error_msg": error_msg,
+                      "success_msg": success_msg
+                  })
+
+
+@login_required(login_url="/login/")
+def change_password_view(request):
+    change_password_form = ChangePasswordForm(request.user, request.POST or None)
+    if change_password_form.is_valid():
+        change_password_form.save()
+        update_session_auth_hash(request, change_password_form.user)
+    else:
+        error_msg = change_password_form.error_messages
+    return render(request,
+                  "./dashboard/edit_profile.html",
+                  {
+                      "email_list": email_list,
+                      "change_password_form": change_password_form,
+                      "error_msg": error_msg,
+                      "success_msg": success_msg
+                  })

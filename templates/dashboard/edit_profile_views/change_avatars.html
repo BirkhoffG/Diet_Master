@@ -1,0 +1,39 @@
+{% load static %}
+
+{# change avatars #}
+
+<div class="col-md-12">
+  {% if error_msg is not None %}
+    <div class="alert alert-danger alert-dismissible fade show">
+      <strong>Error!</strong> {{ error_msg }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+  {% elif success_msg is not None %}
+    <div class="alert alert-success alert-dismissible fade show">
+      <strong>Success!</strong> {{ success_msg }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+  {% endif %}
+
+  <h2>Profile</h2>
+  <hr>
+  <div class="row">
+    <div class="col-lg-8 text-center">
+      <img src="{% static 'img/user1.JPG' %}" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+      <form method="post" action="{% url 'edit_profile' %}">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              <input type="file" class="custom-file-input" id="inputGroupFile01"
+                     aria-describedby="inputGroupFileAddon01">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
