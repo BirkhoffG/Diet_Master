@@ -79,4 +79,7 @@ def survey_view(request):
 
 @login_required(login_url="/login/")
 def profile_view(request):
-    return render(request, "./dashboard/profile.html")
+    from apps.accounts.models import WellBeing
+    obj = WellBeing.objects.filter(user_id = request.user.id)
+    # 不知道queryset中特定值怎么提取，总是type error
+    return render(request, "./dashboard/profile.html", {'o': obj})
