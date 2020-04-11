@@ -15,19 +15,27 @@
                 <h1 class="display-4 font-italic">Hello, {{ request.user | capfirst }}</h1>
                 <div class="col-md-6 px-0">
                     <p class="lead my-3 font-weight-bold">Your Current Weight: </p>
-                    <p class="lead my-3">75 kg</p>
+                    {% for list in o %}
+                        <p class="lead my-3"> {{list.weight}} kg</p>
+                    {% endfor %}
                 </div>
                 <div class="col-md-6 px-0">
                     <p class="lead my-3 font-weight-bold">Your Goal Weight: </p>
-                    <p class="lead my-3">70 kg</p>
+                    {% for list in o %}
+                        <p class="lead my-3"> {{list.target_weight}} kg</p>
+                    {% endfor %}
                 </div>
                 <div class="col-md-6 px-0">
-                    <p class="lead my-3 font-weight-bold">Expected Duration: </p>
-                    <p class="lead my-3">7 weeks</p>
+                    <p class="lead my-3 font-weight-bold">Deadline: </p> <!-- 不会计算，所以稍改了一下 -->
+                    {% for list in o %}
+                        <p class="lead my-3">{{ list.ddl |date:"Y-m-d" }} </p>
+                    {% endfor %}
                 </div>
                 <div class="col-md-6 px-0">
                     <p class="lead my-3 font-weight-bold">Calories Per Day: </p>
-                    <p class="lead my-3">1600 kcal</p>
+                    {% for list in o %}
+                        <p class="lead my-3">{{ list.weight }} kcal</p> <!-- 不会计算，内容有误 -->
+                    {% endfor %}
                 </div>
                 <div class="col-md-6 my-3 px-0">
                     <p class="lead mb-0">
