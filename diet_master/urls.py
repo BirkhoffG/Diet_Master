@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from apps.accounts.views import login_view, logout_view, register_view, survey_view, profile_view, edit_profile_view
+from apps.accounts.views import login_view, logout_view, register_view, survey_view, \
+    profile_view, edit_profile_view, change_password_view
 from apps.recommender.views import recommendation_view
 from apps.web.views import home_view
 
@@ -29,5 +30,6 @@ urlpatterns = [
     path('user/survey', survey_view, name='survey'),
     path('user/profile', profile_view, name='profile'),
     path('user/edit', edit_profile_view, name='edit_profile'),
+    path('user/edit/password', change_password_view, name='change_password'),
     path('admin/', admin.site.urls),
 ]

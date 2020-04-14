@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm, UserChangeForm
 
 
 class ChangePasswordForm(PasswordChangeForm):
@@ -22,5 +22,19 @@ class ChangePasswordForm(PasswordChangeForm):
                                         }
                                     ))
 
-    # def clean_old_pwd(self, *args, **kwargs):
-    #     pass
+    # def clean_new_password1(self):
+    #     password_1 = self.cleaned_data.get('new_password1')
+    #     if len(password_1) > 18 or len(password_1) < 7:
+    #         raise forms.ValidationError("The password should be at least 8 characters")
+    #     elif password_1.isdigit():
+    #         raise forms.ValidationError("The password can't be entirely numeric.")
+    #     return password_1
+
+
+class ChangeEmailForm(forms.Form):
+    email = forms.CharField(widget=forms.EmailInput(
+        attrs={
+            "class": "form-control",
+            "placeholder": "Email address"
+        }
+    ))
