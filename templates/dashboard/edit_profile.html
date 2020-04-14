@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row my-2">
+
+      {#      <div class="row">#}
+      {% include './edit_profile_views/change_avatars.html' %}
+
+      {% include './edit_profile_views/change_email.html' %}
+
+      {% include './edit_profile_views/change_passwords.html' %}
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

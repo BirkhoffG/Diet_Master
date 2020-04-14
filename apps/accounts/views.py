@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.models import User
 import re
+
+from .forms import ChangePasswordForm, ChangeEmailForm
 
 
 def is_email(email: str):
@@ -80,3 +82,59 @@ def survey_view(request):
 @login_required(login_url="/login/")
 def profile_view(request):
     return render(request, "./dashboard/profile.html")
+
+
+@login_required(login_url="/login/")
+def edit_profile_view(request, change_password_form=None, error_msg=None, success_msg=None):
+    email_list = [{'mail': 'guoha@kean.edu', 'verified': True}, {'mail': 'guoha@kean.edu', 'verified': False}]
+    # change_password_form = None
+    if change_password_form is None:
+        change_password_form = ChangePasswordForm(request.user, None)
+    return render(request,
+                  "./dashboard/edit_profile.html",
+                  {
+                      "email_list": email_list,
+                      "change_password_form": change_password_form,
+                      "error_msg": error_msg,
+                      "success_msg": success_msg
+                  })
+
+
+@login_required(login_url="/login/")
+def change_password_view(request):
+    error_msg = None
+    if request.method == "POST":
+        change_password_form = ChangePasswordForm(request.user, data=request.POST)
+        if change_password_form.is_valid():
+            change_password_form.save()
+            update_session_auth_hash(request, change_password_form.user)
+            return edit_profile_view(request, change_password_form, success_msg="Success")
+        else:
+            error_msg = change_password_form.error_messages
+            print(error_msg)
+            print(f"pwd 1: {change_password_form.cleaned_data.get('new_password1')}")
+            print(f"pwd 2: {change_password_form.cleaned_data.get('new_password2')}")
+            print(f"old pwd: {change_password_form.cleaned_data.get('old_password')}")
+    else:
+        change_password_form = ChangePasswordForm(request.user, data=None)
+    return edit_profile_view(request, change_password_form, error_msg=error_msg)
+
+
+@login_required(login_url="/login/")
+def change_email_view(request):
+    error_msg = None
+    if request.method == "POST":
+        change_password_form = ChangePasswordForm(request.user, data=request.POST)
+        if change_password_form.is_valid():
+            change_password_form.save()
+            update_session_auth_hash(request, change_password_form.user)
+            return edit_profile_view(request, change_password_form, success_msg="Success")
+        else:
+            error_msg = change_password_form.error_messages
+            print(error_msg)
+            print(f"pwd 1: {change_password_form.cleaned_data.get('new_password1')}")
+            print(f"pwd 2: {change_password_form.cleaned_data.get('new_password2')}")
+            print(f"old pwd: {change_password_form.cleaned_data.get('old_password')}")
+    else:
+        change_password_form = ChangePasswordForm(request.user, data=None)
+    return edit_profile_view(request, change_password_form, error_msg=error_msg)
