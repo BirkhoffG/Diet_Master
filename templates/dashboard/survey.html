@@ -3,188 +3,105 @@
 {% block content%}
 <link rel="stylesheet" href="{% static 'css/front.css' %}" id="theme-stylesheet">
 <div class="container">
+    <form action="{% url 'survey' %}" method="post">
+        {% csrf_token %}
+        <div class="py-5 text-center">
+            <h2>Information Survey</h2>
+        </div>
+        <div class="row">
+            <div class="offset-md-2 col-md-8">
+                <h6>Please provide your information for us.</h6>
+                <h6>We will use this information to create your own unique diet and profile. </h6>
+            </div>
 
-  <div class="py-5 text-center">
-    <h2>Information Survey</h2>
-  </div>
-  <div class="row">
-    <div class="offset-md-2 col-md-8">
-      <h6>Please provide your information for us.</h6>
-      <h6>We will use this information to create your own unique diet and profile. </h6>
-    </div>
+            <div class="offset-md-2 col-md-8">
+                <h4 class="mb-3">Body Information</h4>
+                <div class="col-md-4 mb-3">
+                    <label for="currentweight">Current Weight (kg)</label>
+                    <input name="weight" type="text" class="form-control" id="currentweight" placeholder="" value="" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="currentheight">Current Height (cm)</label>
+                    <input name="height" type="text" class="form-control" id="currentheight" placeholder="" value="" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="goalweight">Goal Weight (kg)</label>
+                    <input name="target_weight" type="text" class="form-control" id="goalweight" placeholder="" value="" required>
+                </div>
 
-    <div class="offset-md-2 col-md-8">
-      <h4 class="mb-3">Body Information</h4>
-      <div class="col-md-4 mb-3">
-        <label for="currentweight">Current Weight (kg)</label>
-        <input type="text" class="form-control" id="currentweight" placeholder="" value="" required>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="currentheight">Current Height (cm)</label>
-        <input type="text" class="form-control" id="currentheight" placeholder="" value="" required>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="goalweight">Goal Weight (kg)</label>
-        <input type="text" class="form-control" id="goalweight" placeholder="" value="" required>
-      </div>
+                <hr class="mb-4">
+                <h4 class="mb-3">Gender</h4>
+                <div class="col-md-4 mb-3">
+                    <div  class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input name="gender" value="male" checked="checked"  id="male"  type="radio" class="custom-control-input"  required>
+                            <label class="custom-control-label" for="male">male</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input name="gender" value="female" id="female" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="female">female</label>
+                        </div>
+                    </div>
+                </div>
 
-      <hr class="mb-4">
-      <h4 class="mb-3">Gender</h4>
-      <div class="col-md-4 mb-3">
-        <div class="d-block my-3">
-          <div class="custom-control custom-radio">
-            <input id="male" name="gender" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" for="male">male</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="female" name="gender" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" for="female">female</label>
-          </div>
-        </div>
-      </div>
+                <hr class="mb-4">
+                <h4 class="mb-3">Birthday</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="birth_date">What is your birth date?</label>
+                        <input type="date" name="birth_date" id="birth_date" value=""/>
+                    </div>
+                </div>
 
-      <hr class="mb-4">
-      <h4 class="mb-3">Birthday</h4>
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <label for="year">Year</label>
-          <select class="custom-select d-block w-100" id="year" required>
-            <option value="">Choose...</option>
-            <option>2020</option>
-            <option>2019</option>
-            <option>2018</option>
-            <option>2017</option>
-            <option>2016</option>
-            <option>2015</option>
-            <option>2014</option>
-            <option>2013</option>
-            <option>2012</option>
-            <option>2011</option>
-            <option>2010</option>
-            <option>2009</option>
-            <option>2008</option>
-            <option>2007</option>
-            <option>2006</option>
-            <option>2005</option>
-            <option>2004</option>
-            <option>2003</option>
-            <option>2002</option>
-            <option>2001</option>
-            <option>2000</option>
-            <option>1999</option>
-            <option>1998</option>
-            <option>1997</option>
-            <option>1996</option>
-            <option>1995</option>
-            <option>1994</option>
-            <option>1993</option>
-            <option>1992</option>
-            <option>1991</option>
-            <option>1990</option>
-          </select>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="month">Month</label>
-          <select class="custom-select d-block w-100" id="month" required>
-            <option value="">Choose...</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="day">Day</label>
-          <input type="text" class="form-control" id="day" placeholder="" required>
-        </div>
-      </div>
 
-      <hr class="mb-4">
-      <h4 class="mb-3">Other Information</h4>
-      <div class="mb-3">
-        <label for="email">Email <span class="text-muted">(Optional)</span></label>
-        <input type="email" class="form-control" id="email" placeholder="you@example.com">
-        <div class="invalid-feedback">
-          Please enter a valid email address for shipping updates.
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="address">Address</label>
-        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-      </div>
-      <div class="row">
-        <div class="col-md-5 mb-3">
-          <label for="country">Country</label>
-          <select class="custom-select d-block w-100" id="country" required>
-            <option value="">Choose...</option>
-            <option>United States</option>
-          </select>
-          <div class="invalid-feedback">
-            Please select a valid country.
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="state">State</label>
-          <select class="custom-select d-block w-100" id="state" required>
-            <option value="">Choose...</option>
-            <option>California</option>
-          </select>
-          <div class="invalid-feedback">
-            Please provide a valid state.
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="zip">Zip</label>
-          <input type="text" class="form-control" id="zip" placeholder="" required>
-          <div class="invalid-feedback">
-            Zip code required.
-          </div>
-        </div>
-      </div>
+                <hr class="mb-4">
+                <h4 class="mb-3">Duration</h4>
+                <div class="row">
+                    <div class="col-md-9 mb-3">
+                        <label for="duration">How many days do you want the plan to last?(15-180)</label>
+                        <input name="duration" id="duration" value=""/>
+                    </div>
+                </div>
 
-      <hr class="mb-4">
-      <h4 class="mb-3">How would you describe your daily activities?</h4>
-      <div class="col-md-12 mb-3">
-        <div class="d-block my-3">
-          <div class="custom-control custom-radio">
-            <input id="levelone" name="gender" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" for="levelone">
-              Level 1: Sitting almost every day
-            </label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="leveltwo" name="gender" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" for="leveltwo">
-              Level 2: Standing or walking frequently during work and study
-            </label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="levethree" name="gender" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" for="levethree">
-              Level 3: Doing exercises once a week
-            </label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="levelfour" name="gender" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" for="levelfour">
-              Level 4: Doing exercises 2-3 times a week
-            </label>
-          </div>
-        </div>
-      </div>
 
-      <hr class="mb-4">
-      <button class="btn btn-primary btn-lg btn-block" type="submit">Continue</button>
-    </div>
-  </div>
+                <hr class="mb-4">
+                <h4 class="mb-3">How would you describe your daily activities?</h4>
+                <div class="col-md-12 mb-3">
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input name="activity_level" value="1.1" id="levelone" type="radio" class="custom-control-input" checked
+                                   required>
+                            <label class="custom-control-label" for="levelone">
+                                Level 1: Sitting almost every day
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="leveltwo"  name="activity_level" value="1.2" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="leveltwo">
+                                Level 2: Standing or walking frequently during work and study
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="levethree"  name="activity_level" value="1.3" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="levethree">
+                                Level 3: Doing exercises once a week
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="levelfour"  name="activity_level" value="1.4" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="levelfour">
+                                Level 4: Doing exercises 2-3 times a week
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue</button>
+            </div>
+
+        </div>
+    </form>
 </div>
 
 {% endblock %}

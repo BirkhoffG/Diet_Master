@@ -2,8 +2,14 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.models import User
-import re
 
+from datetime import timedelta, datetime
+from dateutil.relativedelta import relativedelta
+
+from .forms import SurveyForm
+from django.http import HttpResponse
+import re
+from .models import WellBeing
 from .forms import ChangePasswordForm, ChangeEmailForm
 
 
@@ -76,7 +82,49 @@ def register_view(request):
 
 @login_required(login_url="/login/")
 def survey_view(request):
+    error_message = None
+    if request.method == 'POST':
+        form=SurveyForm(request.POST)
+        if form.is_valid():
+            if WellBeing.objects.filter(user_id=request.user).exists():
+                a = datetime.strptime(str(datetime.now().date()), "%Y-%m-%d")
+                b = datetime.strptime(str(form.cleaned_data.get('birth_date')), "%Y-%m-%d")
+                delta = relativedelta(a, b)
+                duration = form.cleaned_data.get('duration')
+                WellBeing.objects.filter(user_id=request.user).update(
+                    height=form.cleaned_data.get('height'),
+                    weight=form.cleaned_data.get('weight'),
+                    target_weight=form.cleaned_data.get('target_weight'),
+                    birthday = form.cleaned_data.get('birth_date'),
+                    gender = form.cleaned_data.get('gender'),
+                    age=int(str(delta.years)),
+                    activity_level=form.cleaned_data.get('activity_level'),
+                    ddl=datetime.now() + timedelta(days=duration)
+                )
+                print("Wellbeing entry update")
+            else:
+
+                wellbing=WellBeing()
+                wellbing.user_id=request.user
+                wellbing.height=form.cleaned_data.get('height')
+                wellbing.weight=form.cleaned_data.get('weight')
+                wellbing.target_weight=form.cleaned_data.get('target_weight')
+                wellbing.birthday=form.cleaned_data.get('birth_date')
+                wellbing.gender=form.cleaned_data.get('gender')
+                a = datetime.strptime(str(datetime.now().date()), "%Y-%m-%d")
+                b = datetime.strptime(str(wellbing.birthday), "%Y-%m-%d")
+                delta =relativedelta(a,b)
+                wellbing.age=int(str(delta.years))
+                wellbing.activity_level=form.cleaned_data.get('activity_level')
+                duration=form.cleaned_data.get('duration')
+                wellbing.ddl= datetime.now() + timedelta(days=duration)
+                wellbing.save()
+                print("Wellbeing entry Create")
+            return render(request, "./dashboard/profile.html")
+        else:
+            print(form.errors.get_json_data)
     return render(request, "./dashboard/survey.html")
+
 
 
 @login_required(login_url="/login/")
@@ -138,3 +186,4 @@ def change_email_view(request):
     else:
         change_password_form = ChangePasswordForm(request.user, data=None)
     return edit_profile_view(request, change_password_form, error_msg=error_msg)
+
